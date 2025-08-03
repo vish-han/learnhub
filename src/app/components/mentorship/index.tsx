@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Users, Award, Cpu, Clock, Star, University, CheckCircle } from 'lucide-react';
+import { Users, Cpu, Clock, University } from 'lucide-react';
 
 const MentorshipPlatform = () => {
   const [formData, setFormData] = useState({
@@ -65,8 +65,8 @@ const MentorshipPlatform = () => {
                 Aspirants
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                At Aimlay, we understand that pursuing a doctorate isn't just about academic excellence, 
-                it's a commitment to lifelong learning, research, and impact. That's why thousands of 
+                At Aimlay, we understand that pursuing a doctorate is not just about academic excellence, 
+                it is a commitment to lifelong learning, research, and impact. Thats why thousands of 
                 scholars trust us as their go-to mentorship platform, where expert guidance meets 
                 technology to simplify and support their doctoral journey.
               </p>
