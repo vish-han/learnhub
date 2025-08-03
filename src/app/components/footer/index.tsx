@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Phone, Mail, Facebook, Youtube, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { MapPin, Mail, Facebook, Youtube, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const services = [
@@ -195,13 +195,13 @@ const Footer = () => {
             </div>
           </div>
           <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-            We're online
+            We are online
             <div className="text-xs text-red-100">Leave a message</div>
           </div>
         </div>
 
         {/* Live Chat Button */}
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-6 right-6 z-50"> 
           <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
             <Mail className="w-6 h-6" />
           </button>

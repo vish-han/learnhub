@@ -144,7 +144,7 @@ const TestimonialsSection = () => {
 
                   {/* Testimonial Text */}
                   <p className="text-gray-700 leading-relaxed mb-6 italic">
-                    "{testimonial.text}"
+                {testimonial.text}
                   </p>
 
                   {/* Author Info */}

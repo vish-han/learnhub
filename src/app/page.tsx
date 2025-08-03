@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import HeroSection from "./components/hero";
 import MentorshipPlatform from "./components/mentorship";
 import CommunitySection from "./components/community";

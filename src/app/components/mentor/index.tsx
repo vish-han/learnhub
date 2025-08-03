@@ -103,7 +103,7 @@ const MentorsSection = () => {
             TRUSTED MENTORS
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Talk to the <span className="text-blue-600">Experts</span> Who've Mentored Thousands
+            Talk to the <span className="text-blue-600">Experts</span> Who have Mentored Thousands
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Connect with trusted mentors, advisors, and subject matter experts who bring years of experience 
