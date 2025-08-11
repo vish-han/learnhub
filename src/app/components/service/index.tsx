@@ -5,6 +5,8 @@ import { ChevronLeft, ChevronRight, GraduationCap, BookOpen, Award, Users, Check
 
 const ServicesSection = () => {
   const [currentService, setCurrentService] = useState(0);
+  console.log(currentService);
+  
 
   const services = [
     {

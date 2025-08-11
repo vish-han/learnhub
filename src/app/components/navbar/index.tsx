@@ -48,14 +48,7 @@ const Header = () => {
           {/* Contact Info & CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex flex-col items-end text-sm">
-              <div className="flex items-center space-x-1 text-blue-600">
-                <Phone></Phone>
-                <span className="font-semibold">+91 9821664888</span>
-              </div>
-              <div className="flex items-center space-x-1 text-blue-600">
-                 <Phone></Phone>
-                <span className="font-semibold">+1 575-205-1311</span>
-              </div>
+            
             </div>
             <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2">
               <Banknote className="w-4 h-4" />
@@ -88,14 +81,7 @@ const Header = () => {
               ))}
               <div className="pt-4 border-t">
                 <div className="flex flex-col space-y-2 text-sm">
-                  <div className="flex items-center space-x-2 text-blue-600">
-                      <Phone></Phone>
-                    <span className="font-semibold">+91 9821664888</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-blue-600">
-                      <Phone></Phone>
-                    <span className="font-semibold">+1 575-205-1311</span>
-                  </div>
+              
                 </div>
                 <button className="w-full mt-4 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
                   <Banknote className="w-4 h-4" />

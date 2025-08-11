@@ -158,7 +158,7 @@ const CommunitySection = () => {
 
         {/* Community Members Grid */}
         <div className="relative">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-4 mb-8">
+          {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-4 mb-8">
             {getCurrentMembers().map((member, index) => (
               <div
                 key={`${currentPage}-${index}`}
@@ -178,43 +178,14 @@ const CommunitySection = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
-          {/* Navigation Controls */}
-          <div className="flex items-center justify-center space-x-4">
-            <button
-              onClick={prevPage}
-              className="p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-300"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            {/* Page Indicators */}
-            <div className="flex space-x-2">
-              {Array.from({ length: totalPages }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentPage(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentPage
-                      ? 'bg-yellow-400'
-                      : 'bg-white/30 hover:bg-white/50'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={nextPage}
-              className="p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-300"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
+        
+        
         </div>
 
         {/* Additional Stats or CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 w-full h-full">
           <div className="inline-flex items-center space-x-8 bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-400">150+</div>
