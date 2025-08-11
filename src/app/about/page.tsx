@@ -135,7 +135,7 @@ export default function About() {
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Journey</h3>
               <p className="text-gray-700 leading-relaxed">
-                Guided by Mr. Goswami's visionary leadership, XYZ Group has consistently worked to bridge the gap between ambition and academic achievement, helping learners across the world unlock their full potential.
+                Guided by Mr. Goswami visionary leadership, XYZ Group has consistently worked to bridge the gap between ambition and academic achievement, helping learners across the world unlock their full potential.
               </p>
               <motion.div 
                 className="mt-6 p-4 bg-white rounded-lg border-l-4 border-yellow-500"
