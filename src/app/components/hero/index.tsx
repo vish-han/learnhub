@@ -1,14 +1,15 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import Image from 'next/image'
 import TitleImage from "../../../../public/img/test_image.jpg"
 
 const HeroSection = () => {
   const stats = [
-    { number: "20,700+", label: "Doctorates Mentored" },
-    { number: "6,863+", label: "Researchers Guided" },
-    { number: "10,016+", label: "Higher Education Learners" },
-    { number: "30,045+", label: "Learners Empowered" }
+    { number: 20700, suffix: "+", label: "Doctorates Mentored" },
+    { number: 6863, suffix: "+", label: "Researchers Guided" },
+    { number: 10016, suffix: "+", label: "Higher Education Learners" },
+    { number: 30045, suffix: "+", label: "Learners Empowered" }
   ];
 
   // Animation variants with proper TypeScript types
@@ -53,8 +54,50 @@ const HeroSection = () => {
     }
   };
 
+  // Counter animation component
+  const CounterAnimation = ({ endValue, suffix, delay }: { endValue: number, suffix: string, delay: number }) => {
+    const [currentValue, setCurrentValue] = useState(0);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        const duration = 2000; // 2 seconds
+        const steps = 60;
+        const stepValue = endValue / steps;
+        let step = 0;
+
+        const counter = setInterval(() => {
+          step++;
+          const progress = step / steps;
+          const easeOutProgress = 1 - Math.pow(1 - progress, 3); // Easing function
+          const newValue = Math.floor(easeOutProgress * endValue);
+          
+          setCurrentValue(newValue);
+
+          if (step >= steps) {
+            setCurrentValue(endValue);
+            clearInterval(counter);
+          }
+        }, duration / steps);
+
+        return () => clearInterval(counter);
+      }, delay);
+
+      return () => clearTimeout(timer);
+    }, [endValue, delay]);
+
+    const formatNumber = (num: number) => {
+      return num.toLocaleString();
+    };
+
+    return (
+      <span>
+        {formatNumber(currentValue)}{suffix}
+      </span>
+    );
+  };
+
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden bg-slate-900 font-['Poppins']">
       {/* Background Image */}
       <motion.div 
         className="absolute inset-0"
@@ -69,9 +112,9 @@ const HeroSection = () => {
           className="object-cover"
           priority
         />
-        {/* Dark overlay for better text readability */}
+        {/* Dark overlay with blue tint for better text readability */}
         <motion.div 
-          className="absolute inset-0 bg-black/50"
+          className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -102,10 +145,10 @@ const HeroSection = () => {
             }}
           >
             A Global Vision Rooted in{' '}
-            <span className="text-yellow-400 relative">
+            <span className="text-blue-400 relative">
               Purposeful Leadership
               <motion.div 
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-yellow-400 rounded-full"
+                className="absolute -bottom-2 left-0 right-0 h-1 bg-blue-400 rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 1.3 }}
@@ -129,12 +172,12 @@ const HeroSection = () => {
               }
             }}
           >
-            Doing <span className="text-yellow-400">GOOD</span> while doing{' '}
-            <span className="text-yellow-400">WELL</span>
+            Doing <span className="text-blue-400">GOOD</span> while doing{' '}
+            <span className="text-blue-300">WELL</span>
           </motion.h2>
           
           <motion.p 
-            className="text-xl md:text-2xl text-blue-100 mb-8"
+            className="text-xl md:text-2xl text-slate-300 mb-8"
             initial="hidden"
             animate="visible"
             variants={{
@@ -153,7 +196,7 @@ const HeroSection = () => {
           </motion.p>
           
           <motion.button 
-            className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-8 py-3 rounded-lg transition-colors duration-300 shadow-lg"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300 shadow-lg border border-blue-400/20"
             initial="hidden"
             animate="visible"
             variants={{
@@ -177,12 +220,12 @@ const HeroSection = () => {
             
       {/* Decorative Elements */}
       <motion.div 
-        className="absolute top-20 left-10 w-20 h-20 bg-yellow-400/20 rounded-full blur-xl"
+        className="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl"
         variants={floatingAnimation}
         animate="animate"
       />
       <motion.div 
-        className="absolute bottom-20 right-10 w-32 h-32 bg-purple-400/20 rounded-full blur-xl"
+        className="absolute bottom-20 right-10 w-32 h-32 bg-blue-400/20 rounded-full blur-xl"
         variants={{
           animate: {
             y: [0, 15, 0],
@@ -198,7 +241,7 @@ const HeroSection = () => {
       
       {/* Stats Section */}
       <motion.div 
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-blue-800/50 backdrop-blur-sm p-8"
+        className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-slate-800/60 backdrop-blur-sm p-8 border-t border-slate-700/50"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
@@ -214,7 +257,7 @@ const HeroSection = () => {
             }}
           >
             <motion.div 
-              className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2"
+              className="text-3xl md:text-4xl font-bold text-blue-400 mb-2"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ 
@@ -224,9 +267,13 @@ const HeroSection = () => {
                 stiffness: 200
               }}
             >
-              {stat.number}
+              <CounterAnimation 
+                endValue={stat.number} 
+                suffix={stat.suffix}
+                delay={1500 + (index * 100)} 
+              />
             </motion.div>
-            <div className="text-white text-sm md:text-base">
+            <div className="text-slate-300 text-sm md:text-base">
               {stat.label}
             </div>
           </motion.div>

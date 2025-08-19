@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star, Phone, Calendar ,Users} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Phone, Calendar, Users, UserCheck } from 'lucide-react';
 
 const MentorsSection = () => {
   const [currentMentorSet, setCurrentMentorSet] = useState(0);
@@ -85,27 +85,34 @@ const MentorsSection = () => {
         key={index}
         className={`w-4 h-4 ${
           index < Math.floor(rating)
-            ? 'text-yellow-400 fill-current'
+            ? 'text-cyan-400 fill-current'
             : index < rating
-            ? 'text-yellow-400 fill-current opacity-50'
-            : 'text-gray-300'
+            ? 'text-cyan-400 fill-current opacity-50'
+            : 'text-slate-300'
         }`}
       />
     ));
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section 
+      className="py-20 bg-slate-50"
+      style={{ fontFamily: 'system-ui, -apple-system, "Inter", sans-serif' }}
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            TRUSTED MENTORS
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Talk to the <span className="text-blue-600">Experts</span> Who have Mentored Thousands
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+            <span className="inline-block bg-cyan-400/10 text-cyan-600 px-4 py-2 rounded-full text-sm font-semibold border border-cyan-200">
+              TRUSTED MENTORS
+            </span>
+            <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-normal text-slate-900 mb-6 leading-tight">
+            Talk to the <span className="text-cyan-400 font-medium">Experts</span> Who have Mentored Thousands
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
             Connect with trusted mentors, advisors, and subject matter experts who bring years of experience 
             and thousands of successful counselling sessions to guide your journey.
           </p>
@@ -117,38 +124,36 @@ const MentorsSection = () => {
             {getCurrentMentors().map((mentor, index) => (
               <div
                 key={`${currentMentorSet}-${index}`}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 hover:border-cyan-200 transition-all duration-500 transform hover:scale-105 overflow-hidden"
               >
                 {/* Mentor Image */}
                 <div className="relative">
-                  <img
-                    src={mentor.image}
-                    alt={mentor.name}
-                    className="w-full h-64 object-cover"
-                  />
+                  <div className="w-full h-64 bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center group-hover:from-cyan-100 group-hover:to-cyan-200 transition-all duration-500">
+                    <UserCheck className="w-20 h-20 text-slate-500 group-hover:text-cyan-600 transition-colors duration-500" />
+                  </div>
                   
                   {/* Rating Badge */}
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
-                    <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <span className="text-sm font-semibold text-gray-900">{mentor.rating}</span>
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1 shadow-lg border border-slate-200">
+                    <Star className="w-4 h-4 text-cyan-400 fill-current" />
+                    <span className="text-sm font-semibold text-slate-900">{mentor.rating}</span>
                   </div>
 
                   {/* Sessions Badge */}
-                  <div className="absolute top-4 right-4 bg-green-500/90 backdrop-blur-sm rounded-full px-3 py-1">
+                  <div className="absolute top-4 right-4 bg-cyan-500/95 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg">
                     <span className="text-white text-xs font-semibold">{mentor.sessions}</span>
                   </div>
                 </div>
 
                 {/* Mentor Info */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{mentor.name}</h3>
-                  <p className="text-blue-600 font-semibold mb-2">{mentor.title}</p>
-                  <p className="text-gray-600 text-sm mb-4">{mentor.experience}</p>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-1 group-hover:text-cyan-700 transition-colors duration-300">{mentor.name}</h3>
+                  <p className="text-cyan-600 font-medium mb-2">{mentor.title}</p>
+                  <p className="text-slate-600 text-sm mb-4 font-light">{mentor.experience}</p>
 
                   {/* Rating Stars */}
                   <div className="flex items-center space-x-1 mb-4">
                     {renderStars(mentor.rating)}
-                    <span className="text-sm text-gray-600 ml-2">({mentor.rating})</span>
+                    <span className="text-sm text-slate-600 ml-2 font-medium">({mentor.rating})</span>
                   </div>
 
                   {/* Specialties */}
@@ -157,7 +162,7 @@ const MentorsSection = () => {
                       {mentor.specialties.map((specialty, specialtyIndex) => (
                         <span
                           key={specialtyIndex}
-                          className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded-full"
+                          className="text-xs bg-cyan-50 text-cyan-700 px-2 py-1 rounded-full border border-cyan-200 font-medium"
                         >
                           {specialty}
                         </span>
@@ -166,7 +171,7 @@ const MentorsSection = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                  <button className="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-cyan-500/30 group-hover:scale-105">
                     <Phone className="w-4 h-4" />
                     <span>Book a Call Now</span>
                   </button>
@@ -179,7 +184,7 @@ const MentorsSection = () => {
           <div className="flex items-center justify-center space-x-4">
             <button
               onClick={prevMentorSet}
-              className="p-3 bg-white shadow-lg rounded-full text-gray-600 hover:text-blue-600 hover:shadow-xl transition-all duration-300"
+              className="p-3 bg-white shadow-lg rounded-full text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 border border-slate-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -192,8 +197,8 @@ const MentorsSection = () => {
                   onClick={() => setCurrentMentorSet(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentMentorSet
-                      ? 'bg-blue-600'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-cyan-500 scale-125'
+                      : 'bg-slate-300 hover:bg-slate-400'
                   }`}
                 />
               ))}
@@ -201,7 +206,7 @@ const MentorsSection = () => {
 
             <button
               onClick={nextMentorSet}
-              className="p-3 bg-white shadow-lg rounded-full text-gray-600 hover:text-blue-600 hover:shadow-xl transition-all duration-300"
+              className="p-3 bg-white shadow-lg rounded-full text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 border border-slate-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -209,7 +214,7 @@ const MentorsSection = () => {
 
           {/* More Mentors CTA */}
           <div className="text-center mt-8">
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+            <button className="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-400/30">
               +497 MORE
             </button>
           </div>
@@ -217,28 +222,28 @@ const MentorsSection = () => {
 
         {/* Additional Features */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center p-6">
-            <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-              <Calendar className="w-8 h-8 text-blue-600" />
+          <div className="group text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg border border-slate-100 hover:border-cyan-200 transition-all duration-300">
+            <div className="w-16 h-16 mx-auto mb-4 bg-cyan-50 rounded-full flex items-center justify-center group-hover:bg-cyan-100 transition-all duration-300">
+              <Calendar className="w-8 h-8 text-cyan-600" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Flexible Scheduling</h3>
-            <p className="text-gray-600">Book sessions at your convenience with 24/7 availability</p>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors duration-300">Flexible Scheduling</h3>
+            <p className="text-slate-600 font-light">Book sessions at your convenience with 24/7 availability</p>
           </div>
 
-          <div className="text-center p-6">
-            <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-              <Star className="w-8 h-8 text-green-600" />
+          <div className="group text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg border border-slate-100 hover:border-cyan-200 transition-all duration-300">
+            <div className="w-16 h-16 mx-auto mb-4 bg-cyan-50 rounded-full flex items-center justify-center group-hover:bg-cyan-100 transition-all duration-300">
+              <Star className="w-8 h-8 text-cyan-600" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Proven Results</h3>
-            <p className="text-gray-600">95% success rate with our mentored doctorate candidates</p>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors duration-300">Proven Results</h3>
+            <p className="text-slate-600 font-light">95% success rate with our mentored doctorate candidates</p>
           </div>
 
-          <div className="text-center p-6">
-            <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-              <Users />
+          <div className="group text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-lg border border-slate-100 hover:border-cyan-200 transition-all duration-300">
+            <div className="w-16 h-16 mx-auto mb-4 bg-cyan-50 rounded-full flex items-center justify-center group-hover:bg-cyan-100 transition-all duration-300">
+              <Users className="w-8 h-8 text-cyan-600" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Global Network</h3>
-            <p className="text-gray-600">Connect with mentors and peers from around the world</p>
+            <h3 className="text-xl font-semibold text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors duration-300">Global Network</h3>
+            <p className="text-slate-600 font-light">Connect with mentors and peers from around the world</p>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Quote, UserCheck } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -49,19 +49,19 @@ const TestimonialsSection = () => {
       name: "Google",
       logo: "G",
       rating: 4.4,
-      color: "bg-red-500"
+      color: "bg-slate-700"
     },
     {
       name: "Facebook", 
       logo: "f",
       rating: 4.9,
-      color: "bg-blue-600"
+      color: "bg-cyan-600"
     },
     {
       name: "JustDial",
       logo: "Jd", 
       rating: 4.5,
-      color: "bg-orange-500"
+      color: "bg-slate-800"
     }
   ];
 
@@ -78,24 +78,31 @@ const TestimonialsSection = () => {
       <Star
         key={index}
         className={`w-5 h-5 ${
-          index < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+          index < rating ? 'text-cyan-400 fill-current' : 'text-slate-300'
         }`}
       />
     ));
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section 
+      className="py-20 bg-white"
+      style={{ fontFamily: 'system-ui, -apple-system, "Inter", sans-serif' }}
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            TRUSTED MENTORS
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Words of Trust from <span className="text-blue-600">Global Trailblazers</span>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+            <span className="inline-block bg-cyan-400/10 text-cyan-600 px-4 py-2 rounded-full text-sm font-semibold border border-cyan-200">
+              CLIENT TESTIMONIALS
+            </span>
+            <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-normal text-slate-900 mb-6 leading-tight">
+            Words of Trust from <span className="text-cyan-400 font-medium">Global Trailblazers</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
             Real stories from real professionals across the globe. These testimonials reflect trust, 
             transformation, and the lasting impact of being guided with purpose and precision.
           </p>
@@ -103,13 +110,13 @@ const TestimonialsSection = () => {
 
         {/* Platform Ratings */}
         <div className="flex justify-center mb-16">
-          <div className="bg-gray-50 rounded-2xl p-8 flex items-center space-x-8">
+          <div className="bg-slate-50 rounded-2xl p-8 flex items-center space-x-8 border border-slate-200 shadow-sm">
             {platforms.map((platform, index) => (
-              <div key={index} className="text-center">
-                <div className={`w-16 h-16 ${platform.color} rounded-lg flex items-center justify-center mb-3`}>
+              <div key={index} className="text-center group">
+                <div className={`w-16 h-16 ${platform.color} rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
                   <span className="text-white font-bold text-xl">{platform.logo}</span>
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">{platform.rating}</div>
+                <div className="text-3xl font-semibold text-slate-900 mb-1">{platform.rating}</div>
                 <div className="flex justify-center space-x-1">
                   {renderStars(Math.floor(platform.rating))}
                 </div>
@@ -128,13 +135,15 @@ const TestimonialsSection = () => {
               return (
                 <div
                   key={testimonialIndex}
-                  className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                    offset === 1 ? 'transform scale-105 border-2 border-blue-200' : ''
+                  className={`group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-slate-100 hover:border-cyan-200 transition-all duration-500 ${
+                    offset === 1 ? 'transform scale-105 border-cyan-300 shadow-xl bg-gradient-to-br from-cyan-50/30 to-white' : 'hover:scale-102'
                   }`}
                 >
                   {/* Quote Icon */}
                   <div className="mb-6">
-                    <Quote className="w-8 h-8 text-blue-600" />
+                    <div className="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center group-hover:bg-cyan-100 transition-all duration-300">
+                      <Quote className="w-6 h-6 text-cyan-600" />
+                    </div>
                   </div>
 
                   {/* Rating */}
@@ -143,20 +152,18 @@ const TestimonialsSection = () => {
                   </div>
 
                   {/* Testimonial Text */}
-                  <p className="text-gray-700 leading-relaxed mb-6 italic">
-                {testimonial.text}
+                  <p className="text-slate-700 leading-relaxed mb-6 font-light italic">
+                    {testimonial.text}
                   </p>
 
                   {/* Author Info */}
                   <div className="flex items-center space-x-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.author}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
+                    <div className="w-12 h-12 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full flex items-center justify-center group-hover:from-cyan-100 group-hover:to-cyan-200 transition-all duration-300">
+                      <UserCheck className="w-6 h-6 text-slate-600 group-hover:text-cyan-600 transition-colors duration-300" />
+                    </div>
                     <div>
-                      <h4 className="font-bold text-blue-600">{testimonial.author}</h4>
-                      <p className="text-gray-600 text-sm">{testimonial.position}</p>
+                      <h4 className="font-semibold text-slate-900 group-hover:text-cyan-700 transition-colors duration-300">{testimonial.author}</h4>
+                      <p className="text-slate-600 text-sm font-light">{testimonial.position}</p>
                     </div>
                   </div>
                 </div>
@@ -168,9 +175,9 @@ const TestimonialsSection = () => {
           <div className="flex items-center justify-center space-x-4 mt-12">
             <button
               onClick={prevTestimonial}
-              className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300"
+              className="p-3 bg-cyan-500 text-white rounded-full hover:bg-cyan-600 shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 group"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
             </button>
 
             {/* Page Indicators */}
@@ -181,8 +188,8 @@ const TestimonialsSection = () => {
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentTestimonial
-                      ? 'bg-blue-600'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-cyan-500 scale-125'
+                      : 'bg-slate-300 hover:bg-slate-400'
                   }`}
                 />
               ))}
@@ -190,31 +197,31 @@ const TestimonialsSection = () => {
 
             <button
               onClick={nextTestimonial}
-              className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300"
+              className="p-3 bg-cyan-500 text-white rounded-full hover:bg-cyan-600 shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 group"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
             </button>
           </div>
         </div>
 
         {/* Additional Trust Indicators */}
-        <div className="mt-20 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
+        <div className="mt-20 bg-gradient-to-br from-slate-50 to-cyan-50 rounded-2xl p-8 border border-slate-200 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
-              <div className="text-gray-600">Success Rate</div>
+            <div className="group">
+              <div className="text-3xl font-semibold text-cyan-600 mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
+              <div className="text-slate-600 font-medium">Success Rate</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">15,000+</div>
-              <div className="text-gray-600">Happy Clients</div>
+            <div className="group">
+              <div className="text-3xl font-semibold text-cyan-600 mb-2 group-hover:scale-110 transition-transform duration-300">15,000+</div>
+              <div className="text-slate-600 font-medium">Happy Clients</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">4.8/5</div>
-              <div className="text-gray-600">Average Rating</div>
+            <div className="group">
+              <div className="text-3xl font-semibold text-cyan-600 mb-2 group-hover:scale-110 transition-transform duration-300">4.8/5</div>
+              <div className="text-slate-600 font-medium">Average Rating</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
-              <div className="text-gray-600">Support Available</div>
+            <div className="group">
+              <div className="text-3xl font-semibold text-cyan-600 mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
+              <div className="text-slate-600 font-medium">Support Available</div>
             </div>
           </div>
         </div>

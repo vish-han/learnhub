@@ -93,7 +93,10 @@ export default function About() {
   };
 
   return (
-    <div className="bg-white text-gray-800">
+    <div 
+      className="bg-white text-slate-800"
+      style={{ fontFamily: 'system-ui, -apple-system, "Inter", sans-serif' }}
+    >
       {/* Our Story Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -104,8 +107,15 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              A Global Vision Rooted in <span className="text-yellow-500">Purposeful Leadership</span>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+              <span className="inline-block bg-cyan-400/10 text-cyan-600 px-4 py-2 rounded-full text-sm font-semibold border border-cyan-200">
+                OUR STORY
+              </span>
+              <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-normal text-slate-900 mb-6 leading-tight">
+              A Global Vision Rooted in <span className="text-cyan-400 font-medium">Purposeful Leadership</span>
             </h2>
           </motion.div>
           
@@ -117,28 +127,28 @@ export default function About() {
               viewport={{ once: true, amount: 0.3 }}
               variants={fadeInLeft}
             >
-              <p className="text-lg leading-relaxed text-gray-700">
-                Founded in <strong className="text-blue-600">2015</strong> by <strong className="text-blue-600">Mr. Keshav Goswami</strong>, XYZ Group was born from a simple yet powerful idea: to make quality education accessible, flexible, and relevant for all — especially for working professionals and lifelong learners striving to advance their careers and personal growth.
+              <p className="text-lg leading-relaxed text-slate-700 font-light">
+                Founded in <strong className="text-cyan-600 font-semibold">2015</strong> by <strong className="text-cyan-600 font-semibold">Mr. Keshav Goswami</strong>, LearnHub was born from a simple yet powerful idea: to make quality education accessible, flexible, and relevant for all — especially for working professionals and lifelong learners striving to advance their careers and personal growth.
               </p>
               
-              <p className="text-lg leading-relaxed text-gray-700">
+              <p className="text-lg leading-relaxed text-slate-700 font-light">
                 What began as a modest initiative has since evolved into a globally recognized, professionally incorporated ed-tech enterprise, committed to transforming education through technology, innovation, and purpose.
               </p>
             </motion.div>
             
             <motion.div 
-              className="bg-gradient-to-br from-blue-50 to-yellow-50 p-8 rounded-2xl"
+              className="bg-gradient-to-br from-cyan-50 to-slate-50 p-8 rounded-2xl border border-cyan-100 shadow-lg"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={fadeInRight}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Journey</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Guided by Mr. Goswami visionary leadership, XYZ Group has consistently worked to bridge the gap between ambition and academic achievement, helping learners across the world unlock their full potential.
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Our Journey</h3>
+              <p className="text-slate-700 leading-relaxed font-light">
+                Guided by Mr. Goswami visionary leadership, LearnHub has consistently worked to bridge the gap between ambition and academic achievement, helping learners across the world unlock their full potential.
               </p>
               <motion.div 
-                className="mt-6 p-4 bg-white rounded-lg border-l-4 border-yellow-500"
+                className="mt-6 p-6 bg-white rounded-xl border-l-4 border-cyan-400 shadow-sm"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -154,8 +164,8 @@ export default function About() {
                   }
                 }}
               >
-                <p className="text-gray-800 font-medium">
-                  Today, XYZ stands as a symbol of trust, transformation, and opportunity — empowering individuals through learner-centric solutions, industry-aligned programs, and strategic collaborations with academic institutions worldwide.
+                <p className="text-slate-800 font-medium">
+                  Today, LearnHub stands as a symbol of trust, transformation, and opportunity — empowering individuals through learner-centric solutions, industry-aligned programs, and strategic collaborations with academic institutions worldwide.
                 </p>
               </motion.div>
             </motion.div>
@@ -164,7 +174,7 @@ export default function About() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-slate-50">
         <div className="container mx-auto max-w-6xl">
           <motion.div 
             className="text-center mb-16"
@@ -173,14 +183,21 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Empowering Education Through <span className="text-blue-600">Innovation and Values</span>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+              <span className="inline-block bg-cyan-400/10 text-cyan-600 px-4 py-2 rounded-full text-sm font-semibold border border-cyan-200">
+                OUR MISSION
+              </span>
+              <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-normal text-slate-900 mb-6 leading-tight">
+              Empowering Education Through <span className="text-cyan-400 font-medium">Innovation and Values</span>
             </h2>
           </motion.div>
           
           <div className="space-y-8">
             <motion.p 
-              className="text-lg leading-relaxed text-gray-700 text-center max-w-4xl mx-auto"
+              className="text-lg leading-relaxed text-slate-700 text-center max-w-4xl mx-auto font-light"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
@@ -196,25 +213,25 @@ export default function About() {
                 }
               }}
             >
-              XYZ Group is a global education ecosystem committed to transforming lives through purpose-driven innovation and inclusive learning. The Group comprises multiple strategic verticals — XYZ Private Limited, XYZ Inc, XYZ Foundation, XYZ LLC FZ, and the Association for Awareness of Applied Research — each contributing uniquely to our collective mission.
+              LearnHub is a global education ecosystem committed to transforming lives through purpose-driven innovation and inclusive learning. The Group comprises multiple strategic verticals — LearnHub Private Limited, LearnHub Inc, LearnHub Foundation, LearnHub LLC FZ, and the Association for Awareness of Applied Research — each contributing uniquely to our collective mission.
             </motion.p>
             
             <motion.div 
-              className="bg-white p-8 rounded-2xl shadow-lg"
+              className="bg-white p-8 rounded-2xl shadow-lg border border-slate-200"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={scaleIn}
             >
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                <p className="text-xl text-blue-600 font-semibold">
+                <h3 className="text-3xl font-semibold text-slate-900 mb-4">Our Mission</h3>
+                <p className="text-xl text-cyan-600 font-medium">
                   To empower individuals through education that is accessible, relevant, and transformative.
                 </p>
               </div>
               
               <motion.div 
-                className="bg-gradient-to-r from-blue-600 to-yellow-500 p-6 rounded-xl text-white"
+                className="bg-gradient-to-r from-slate-800 to-cyan-900 p-6 rounded-xl text-white"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -230,8 +247,8 @@ export default function About() {
                   }
                 }}
               >
-                <p className="text-lg leading-relaxed">
-                  At the core of XYZ Group is its visionary leader, <strong>Mr. Keshav Goswami, Chairman and CEO</strong>, whose unwavering dedication to <strong>United Nations Sustainable Development Goal 4 (SDG 4): Quality Education for All</strong> inspires every initiative we undertake.
+                <p className="text-lg leading-relaxed font-light">
+                  At the core of LearnHub is its visionary leader, <strong className="text-cyan-300 font-semibold">Mr. Keshav Goswami, Chairman and CEO</strong>, whose unwavering dedication to <strong className="text-cyan-300 font-semibold">United Nations Sustainable Development Goal 4 (SDG 4): Quality Education for All</strong> inspires every initiative we undertake.
                 </p>
               </motion.div>
             </motion.div>
@@ -249,10 +266,17 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              A <span className="text-yellow-500">Values-Driven</span> Approach to Learning
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+              <span className="inline-block bg-cyan-400/10 text-cyan-600 px-4 py-2 rounded-full text-sm font-semibold border border-cyan-200">
+                CORE VALUES
+              </span>
+              <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-normal text-slate-900 mb-6 leading-tight">
+              A <span className="text-cyan-400 font-medium">Values-Driven</span> Approach to Learning
             </h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg text-slate-700 max-w-3xl mx-auto font-light">
               Our foundation is built on five core values that guide every program, platform, and partnership we develop.
             </p>
           </motion.div>
@@ -267,17 +291,17 @@ export default function About() {
             {coreValues.map((value, index) => (
               <motion.div 
                 key={index} 
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-blue-500"
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 border-cyan-400 group hover:scale-105"
                 variants={staggerItem}
                 whileHover={{ 
-                  y: -5, 
+                  y: -8, 
                   transition: { 
                     duration: 0.3
                   } 
                 }}
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                <h3 className="text-2xl font-semibold text-slate-900 mb-4 group-hover:text-cyan-700 transition-colors duration-300">{value.title}</h3>
+                <p className="text-slate-700 leading-relaxed font-light">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -299,9 +323,9 @@ export default function About() {
               }
             }}
           >
-            <div className="bg-gradient-to-r from-blue-50 to-yellow-50 p-8 rounded-2xl">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                These values ensure that every learner enjoys a <strong className="text-blue-600">personalized, flexible, and impactful experience</strong> — one that meets both academic and real-world needs.
+            <div className="bg-gradient-to-r from-cyan-50 to-slate-50 p-8 rounded-2xl border border-cyan-100">
+              <p className="text-lg text-slate-700 leading-relaxed font-light">
+                These values ensure that every learner enjoys a <strong className="text-cyan-600 font-semibold">personalized, flexible, and impactful experience</strong> — one that meets both academic and real-world needs.
               </p>
             </div>
           </motion.div>
@@ -309,17 +333,30 @@ export default function About() {
       </section>
 
       {/* Learning Without Limits Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="container mx-auto max-w-6xl text-center">
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-8"
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-cyan-900 text-white relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-400/10 rounded-full -translate-y-32 translate-x-32 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-cyan-400/5 rounded-full translate-y-24 -translate-x-24 blur-3xl"></div>
+        
+        <div className="container mx-auto max-w-6xl text-center relative z-10">
+          <motion.div
+            className="mb-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
           >
-            Learning Without <span className="text-yellow-400">Limits</span>
-          </motion.h2>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+              <span className="inline-block bg-cyan-400/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-semibold border border-cyan-400/30">
+                OUR VISION
+              </span>
+              <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-normal mb-8 leading-tight">
+              Learning Without <span className="text-cyan-400 font-medium">Limits</span>
+            </h2>
+          </motion.div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div 
@@ -329,24 +366,24 @@ export default function About() {
               viewport={{ once: true, amount: 0.3 }}
               variants={fadeInLeft}
             >
-              <p className="text-lg leading-relaxed">
-                With a strong international presence and a portfolio of global partnerships, XYZ Group is redefining how people learn, grow, and succeed. We are not just building academic pathways — we are creating lifelong opportunities that help individuals thrive in an ever-changing world.
+              <p className="text-lg leading-relaxed font-light">
+                With a strong international presence and a portfolio of global partnerships, LearnHub is redefining how people learn, grow, and succeed. We are not just building academic pathways — we are creating lifelong opportunities that help individuals thrive in an ever-changing world.
               </p>
               
-              <p className="text-lg leading-relaxed">
-                Whether through digital platforms, corporate learning, higher education collaborations, or social impact initiatives, XYZ Group remains steadfast in its mission.
+              <p className="text-lg leading-relaxed font-light">
+                Whether through digital platforms, corporate learning, higher education collaborations, or social impact initiatives, LearnHub remains steadfast in its mission.
               </p>
             </motion.div>
             
             <motion.div 
-              className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl"
+              className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={fadeInRight}
             >
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">Our Commitment</h3>
-              <p className="text-xl font-semibold">
+              <h3 className="text-2xl font-semibold text-cyan-400 mb-4">Our Commitment</h3>
+              <p className="text-xl font-medium mb-6">
                 To make learning limitless, inclusive, and empowering for all.
               </p>
               <motion.div 
@@ -367,7 +404,7 @@ export default function About() {
                 }}
               >
                 <motion.button 
-                  className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
+                  className="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-cyan-400/30"
                   whileHover={{ 
                     scale: 1.05,
                     transition: {
