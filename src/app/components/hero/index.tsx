@@ -1,8 +1,6 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import Image from 'next/image'
-import TitleImage from "../../../../public/img/test_image.jpg"
 
 const HeroSection = () => {
   const stats = [
@@ -105,12 +103,11 @@ const HeroSection = () => {
         animate={{ scale: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <Image 
-          src={TitleImage} 
-          alt='Background image'
-          fill
-          className="object-cover"
-          priority
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://opengraph.b-cdn.net/production/images/72d8a9c4-6334-4ae1-9d62-db334ff18601.jpg?token=ERgobjhDUk2bxbbmJxeI09ni9VfSjzK8OtYWCNv3r5g&height=1049&width=1200&expires=33291591311')`
+          }}
         />
         {/* Dark overlay with blue tint for better text readability */}
         <motion.div 
