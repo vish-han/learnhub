@@ -25,12 +25,12 @@ const Footer = () => {
 
   const featureLinks = [
     "Home", "About Us", "Blog", "All Services", "Career", "Contact Us",
-    "Question Bank", "Aimlay Writing", "Thesis Writing", "Research Partner"
+    "Question Bank", "GradifyNow Writing", "Thesis Writing", "Research Partner"
   ];
 
   const quickLinks = [
-    "Web Stories", "Life at Aimlay", "University Visits", "Happy Clients",
-    "Aimlay Foundation", "Become a Partner", "Privacy Policy", "Disclaimer",
+    "Web Stories", "Life at GradifyNow", "University Visits", "Happy Clients",
+    "GradifyNow Foundation", "Become a Partner", "Privacy Policy", "Disclaimer",
     "Terms & Conditions", "Refund Policy", "Client Connect"
   ];
 

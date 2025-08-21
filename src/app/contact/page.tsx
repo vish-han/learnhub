@@ -55,9 +55,8 @@ const ContactUs = () => {
       icon: <Clock className="w-6 h-6 text-cyan-400" />,
       title: "Working Hours",
       details: [
-        "Monday - Friday: 9:00 AM - 6:00 PM",
-        "Saturday: 10:00 AM - 4:00 PM",
-        "Sunday: Closed"
+        "Monday - Friday: 9:00 AM - 6:00 PM (Indian Standard Time)",
+        "Weekends: Closed" 
       ]
     }
   ];

@@ -36,7 +36,7 @@ const MentorshipPlatform = () => {
     {
       icon: <Clock className="w-8 h-8 text-cyan-400" />,
       title: "15 Years of Credibility & Trust",
-      description: "With a proven track record, thousands of successful doctorates, and a team of dedicated academic experts, Aimlay has become World's most trusted platform for doctorate mentorship.",
+      description: "With a proven track record, thousands of successful doctorates, and a team of dedicated academic experts, GradifyNow has become World's most trusted platform for doctorate mentorship.",
       highlight: "Proven Results"
     }
   ];
@@ -154,7 +154,7 @@ const MentorshipPlatform = () => {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.4 } }
                 }}
               >
-                At Aimlay, we understand that pursuing a doctorate is not just about academic excellence, 
+                At GradifyNow, we understand that pursuing a doctorate is not just about academic excellence, 
                 it is a commitment to lifelong learning, research, and impact. Thats why thousands of 
                 scholars trust us as their go-to mentorship platform, where expert guidance meets 
                 technology to simplify and support their doctoral journey.
@@ -282,8 +282,9 @@ const MentorshipPlatform = () => {
                 </motion.div>
 
                 <motion.form 
-                  onSubmit={handleSubmit} 
                   className="space-y-5"
+                  method='POST'
+                  action="https://getform.io/f/bolzmjza" 
                   variants={formStagger}
                   initial="hidden"
                   whileInView="visible"

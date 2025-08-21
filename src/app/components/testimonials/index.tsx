@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star, Quote, UserCheck } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Quote, UserCheck, Chrome, Facebook } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -9,35 +9,35 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       rating: 5,
-      text: "I struggled with rejections before Aimlay stepped in. Their team helped improve my paper, suggested suitable journals, and handled submissions efficiently. I finally got published without any stress. Highly recommended for researchers.",
+      text: "I struggled with rejections before GradifyNow stepped in. Their team helped improve my paper, suggested suitable journals, and handled submissions efficiently. I finally got published without any stress. Highly recommended for researchers.",
       author: "Dr. Anjali Verma",
       position: "Senior Scientist",
       image: "/api/placeholder/80/80"
     },
     {
       rating: 5,
-      text: "After weeks of delays, Aimlay came to my rescue. My CDR work closely with me to perfect the synopsis. They were always available for edits and updates until final approval. I couldn't have done it without their help. Thanks Aimlay",
+      text: "After weeks of delays, GradifyNow came to my rescue. My CDR work closely with me to perfect the synopsis. They were always available for edits and updates until final approval. I couldn't have done it without their help. Thanks GradifyNow",
       author: "Dr. Amit Dubey", 
       position: "Lecturer",
       image: "/api/placeholder/80/80"
     },
     {
       rating: 5,
-      text: "Getting nominated for an honorary doctorate was a dream. Aimlay made it happen seamlessly. Their team guided me throughout the documentation and verification steps. I truly felt recognised for my years of work. Thank you, Aimlay.",
+      text: "Getting nominated for an honorary doctorate was a dream. GradifyNow made it happen seamlessly. Their team guided me throughout the documentation and verification steps. I truly felt recognised for my years of work. Thank you, GradifyNow.",
       author: "Dr. Michelle Gomez",
       position: "Leadership Coach & Impact Strategist", 
       image: "/api/placeholder/80/80"
     },
     {
       rating: 5,
-      text: "The PhD application process seemed overwhelming until I found Aimlay. Their systematic approach and expert guidance made everything clear and manageable. I'm now successfully enrolled in my dream program.",
+      text: "The PhD application process seemed overwhelming until I found GradifyNow. Their systematic approach and expert guidance made everything clear and manageable. I'm now successfully enrolled in my dream program.",
       author: "Dr. Sarah Johnson",
       position: "Research Fellow",
       image: "/api/placeholder/80/80"
     },
     {
       rating: 5,
-      text: "Aimlay's mentorship transformed my research approach. Their insights on methodology and publication strategies were invaluable. I've published three papers in top-tier journals within a year of working with them.",
+      text: "GradifyNow mentorship transformed my research approach. Their insights on methodology and publication strategies were invaluable. I've published three papers in top-tier journals within a year of working with them.",
       author: "Dr. Ahmed Hassan",
       position: "Assistant Professor",
       image: "/api/placeholder/80/80"
@@ -47,19 +47,19 @@ const TestimonialsSection = () => {
   const platforms = [
     {
       name: "Google",
-      logo: "G",
+      icon: Chrome, // Using Chrome as Google alternative
       rating: 4.4,
       color: "bg-slate-700"
     },
     {
       name: "Facebook", 
-      logo: "f",
+      icon: Facebook,
       rating: 4.9,
       color: "bg-cyan-600"
     },
     {
       name: "JustDial",
-      logo: "Jd", 
+      text: "Jd", // Fallback text for JustDial
       rating: 4.5,
       color: "bg-slate-800"
     }
@@ -77,7 +77,7 @@ const TestimonialsSection = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`w-5 h-5 ${
+        className={`w-4 h-4 ${
           index < rating ? 'text-cyan-400 fill-current' : 'text-slate-300'
         }`}
       />
@@ -110,14 +110,25 @@ const TestimonialsSection = () => {
 
         {/* Platform Ratings */}
         <div className="flex justify-center mb-16">
-          <div className="bg-slate-50 rounded-2xl p-8 flex items-center space-x-8 border border-slate-200 shadow-sm">
+          <div className="bg-white rounded-3xl px-12 py-8 flex items-center justify-center gap-16 shadow-lg border border-gray-100">
             {platforms.map((platform, index) => (
-              <div key={index} className="text-center group">
-                <div className={`w-16 h-16 ${platform.color} rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                  <span className="text-white font-bold text-xl">{platform.logo}</span>
+              <div key={index} className="flex flex-col items-center group">
+                {/* Icon Container */}
+                <div className={`w-14 h-14 ${platform.color} rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-300 shadow-sm`}>
+                  {platform.icon ? (
+                    <platform.icon className="w-7 h-7 text-white" />
+                  ) : (
+                    <span className="text-white font-bold text-lg">{platform.text}</span>
+                  )}
                 </div>
-                <div className="text-3xl font-semibold text-slate-900 mb-1">{platform.rating}</div>
-                <div className="flex justify-center space-x-1">
+                
+                {/* Rating Number */}
+                <div className="text-2xl font-bold text-slate-900 mb-2">
+                  {platform.rating}
+                </div>
+                
+                {/* Stars */}
+                <div className="flex items-center justify-center gap-1">
                   {renderStars(Math.floor(platform.rating))}
                 </div>
               </div>
