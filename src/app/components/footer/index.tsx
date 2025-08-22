@@ -61,7 +61,7 @@ const Footer = () => {
               <div className="bg-slate-800/80 rounded-xl p-4 h-44 flex items-center justify-center shadow-inner">
                 <div className="text-center">
                   <MapPin className="w-7 h-7 text-cyan-400 mx-auto mb-2" />
-                  <div className="text-sm text-gray-200 font-semibold">LearnHub HQ</div>
+                  <div className="text-sm text-gray-200 font-semibold">GradifyNow HQ</div>
                   <div className="text-xs text-gray-400">New Delhi, India</div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             {/* Copyright */}
             <div className="text-cyan-100/70 text-xs mb-3 md:mb-0">
-              © 2025 LearnHub. All rights reserved.
+              © 2025 GradifyNow. All rights reserved.
             </div>
             {/* Footer Links */}
             <div className="flex flex-wrap items-center gap-5">

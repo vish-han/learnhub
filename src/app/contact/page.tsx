@@ -29,7 +29,7 @@ const ContactUs = () => {
       icon: <MapPin className="w-6 h-6 text-cyan-400" />,
       title: "Address",
       details: [
-        "LearnHub Education Center",
+        "GradifyNow Education Center",
         "Block A, Sector 18",
         "Noida, Uttar Pradesh 201301",
         "India"
@@ -47,8 +47,8 @@ const ContactUs = () => {
       icon: <Mail className="w-6 h-6 text-cyan-400" />,
       title: "Email",
       details: [
-        "info@learnhub.com",
-        "support@learnhub.com"
+        "info@gradifynow.com",
+        "support@gradifynow.com"
       ]
     },
     {
@@ -164,7 +164,7 @@ const ContactUs = () => {
               <div className="h-1 w-12 bg-cyan-400 rounded-full"></div>
             </div>
             <h1 className="text-4xl md:text-6xl font-normal mb-6 leading-tight">
-              Contact <span className="text-cyan-400 font-medium">LearnHub</span>
+              Contact <span className="text-cyan-400 font-medium">GradifyNow</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
               Ready to start your academic journey? Get in touch with our expert team for personalized guidance and support.

@@ -128,7 +128,7 @@ export default function About() {
               variants={fadeInLeft}
             >
               <p className="text-lg leading-relaxed text-slate-700 font-light">
-                Founded in <strong className="text-cyan-600 font-semibold">2015</strong> by <strong className="text-cyan-600 font-semibold">Mr. Keshav Goswami</strong>, LearnHub was born from a simple yet powerful idea: to make quality education accessible, flexible, and relevant for all — especially for working professionals and lifelong learners striving to advance their careers and personal growth.
+                Founded in <strong className="text-cyan-600 font-semibold">2015</strong> by <strong className="text-cyan-600 font-semibold">Mr. Keshav Goswami</strong>,GridifyNow was born from a simple yet powerful idea: to make quality education accessible, flexible, and relevant for all — especially for working professionals and lifelong learners striving to advance their careers and personal growth.
               </p>
               
               <p className="text-lg leading-relaxed text-slate-700 font-light">
@@ -145,7 +145,7 @@ export default function About() {
             >
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">Our Journey</h3>
               <p className="text-slate-700 leading-relaxed font-light">
-                Guided by Mr. Goswami visionary leadership, LearnHub has consistently worked to bridge the gap between ambition and academic achievement, helping learners across the world unlock their full potential.
+                Guided by Mr. Goswami visionary leadership, GradifyNow has consistently worked to bridge the gap between ambition and academic achievement, helping learners across the world unlock their full potential.
               </p>
               <motion.div 
                 className="mt-6 p-6 bg-white rounded-xl border-l-4 border-cyan-400 shadow-sm"
@@ -165,7 +165,7 @@ export default function About() {
                 }}
               >
                 <p className="text-slate-800 font-medium">
-                  Today, LearnHub stands as a symbol of trust, transformation, and opportunity — empowering individuals through learner-centric solutions, industry-aligned programs, and strategic collaborations with academic institutions worldwide.
+                  Today, GradifyNow stands as a symbol of trust, transformation, and opportunity — empowering individuals through learner-centric solutions, industry-aligned programs, and strategic collaborations with academic institutions worldwide.
                 </p>
               </motion.div>
             </motion.div>
@@ -213,7 +213,7 @@ export default function About() {
                 }
               }}
             >
-              LearnHub is a global education ecosystem committed to transforming lives through purpose-driven innovation and inclusive learning. The Group comprises multiple strategic verticals — LearnHub Private Limited, LearnHub Inc, LearnHub Foundation, LearnHub LLC FZ, and the Association for Awareness of Applied Research — each contributing uniquely to our collective mission.
+              GradifyNow is a global education ecosystem committed to transforming lives through purpose-driven innovation and inclusive learning. The Group comprises multiple strategic verticals — GradifyNow Private Limited, GradifyNow Inc, GradifyNow Foundation, GradifyNow LLC FZ, and the Association for Awareness of Applied Research — each contributing uniquely to our collective mission.
             </motion.p>
             
             <motion.div 
@@ -248,7 +248,7 @@ export default function About() {
                 }}
               >
                 <p className="text-lg leading-relaxed font-light">
-                  At the core of LearnHub is its visionary leader, <strong className="text-cyan-300 font-semibold">Mr. Keshav Goswami, Chairman and CEO</strong>, whose unwavering dedication to <strong className="text-cyan-300 font-semibold">United Nations Sustainable Development Goal 4 (SDG 4): Quality Education for All</strong> inspires every initiative we undertake.
+                  At the core of GradifyNow is its visionary leader, <strong className="text-cyan-300 font-semibold">Mr. Keshav Goswami, Chairman and CEO</strong>, whose unwavering dedication to <strong className="text-cyan-300 font-semibold">United Nations Sustainable Development Goal 4 (SDG 4): Quality Education for All</strong> inspires every initiative we undertake.
                 </p>
               </motion.div>
             </motion.div>
@@ -367,11 +367,11 @@ export default function About() {
               variants={fadeInLeft}
             >
               <p className="text-lg leading-relaxed font-light">
-                With a strong international presence and a portfolio of global partnerships, LearnHub is redefining how people learn, grow, and succeed. We are not just building academic pathways — we are creating lifelong opportunities that help individuals thrive in an ever-changing world.
+                With a strong international presence and a portfolio of global partnerships, GradifyNow is redefining how people learn, grow, and succeed. We are not just building academic pathways — we are creating lifelong opportunities that help individuals thrive in an ever-changing world.
               </p>
               
               <p className="text-lg leading-relaxed font-light">
-                Whether through digital platforms, corporate learning, higher education collaborations, or social impact initiatives, LearnHub remains steadfast in its mission.
+                Whether through digital platforms, corporate learning, higher education collaborations, or social impact initiatives, GradifyNow remains steadfast in its mission.
               </p>
             </motion.div>
             
