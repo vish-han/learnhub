@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Link } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import Logo from "../../../../public/img/gradify_now.png"
 import Image from 'next/image';
+import Link from 'next/link'
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,6 +35,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
+          <Link href='/' className='cursor-pointer'>
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-sm flex items-center justify-center">
               <Image src={Logo} alt='GradifyNow Logo' width={32} height={32} />
@@ -43,7 +46,7 @@ const Header = () => {
               </span>
             </div>
           </div>
-
+</Link>
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (

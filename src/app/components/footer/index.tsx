@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Mail, Facebook, Youtube, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { MapPin, Mail, Facebook, Youtube, Instagram, Linkedin, Twitter, CreditCard } from 'lucide-react';
 
 const Footer = () => {
   const services = [
@@ -89,8 +89,32 @@ const Footer = () => {
               </a>
             </div>
 
-            {/* App Download */}
-            
+            {/* Payment Methods */}
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <CreditCard className="w-5 h-5 text-cyan-400" />
+                We Accept
+              </h4>
+              <div className="bg-slate-800/60 rounded-lg p-4">
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-white rounded-md p-2 flex items-center justify-center h-12">
+                    <img src="/api/placeholder/60/30" alt="Visa" className="h-6" />
+                  </div>
+                  <div className="bg-white rounded-md p-2 flex items-center justify-center h-12">
+                    <img src="/api/placeholder/60/30" alt="Mastercard" className="h-6" />
+                  </div>
+                  <div className="bg-white rounded-md p-2 flex items-center justify-center h-12">
+                    <img src="/api/placeholder/60/30" alt="PayPal" className="h-6" />
+                  </div>
+                  <div className="bg-white rounded-md p-2 flex items-center justify-center h-12">
+                    <span className="text-purple-600 font-bold text-sm">UPI</span>
+                  </div>
+                </div>
+                <div className="text-xs text-gray-300 mt-2 text-center">
+                  Secure payments with 256-bit SSL encryption
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Services */}
@@ -166,7 +190,6 @@ const Footer = () => {
             <span className="text-green-500 font-bold text-lg">💬</span>
           </div>
         </div> */}
-      
       </div>
 
       {/* Live Chat Button */}

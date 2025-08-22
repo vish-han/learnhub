@@ -9,7 +9,8 @@ const ServicesSection = () => {
   const services = [
     {
       category: "Admission Guidance",
-      title: "B.Ed. Courses",
+      link:"/ug-pg",
+      title: "UG-PG Courses",
       icon: <GraduationCap className="w-8 h-8 text-cyan-400" />,
       color: "bg-slate-800",
       features: [
@@ -20,7 +21,8 @@ const ServicesSection = () => {
     },
     {
       category: "Admission Guidance", 
-      title: "Management Courses",
+      title: "Diploma Courses",
+      link:"/diploma",
       icon: <Users className="w-8 h-8 text-cyan-400" />,
       color: "bg-slate-800",
       features: [
@@ -30,8 +32,9 @@ const ServicesSection = () => {
       ]
     },
     {
-      category: "Doctorate Mentorship",
-      title: "Honorary Doctorate Nomination",
+      category: "Biography Mentorship",
+      title: "Biograghy",
+      link:"/biography",
       icon: <Award className="w-8 h-8 text-cyan-400" />,
       color: "bg-slate-800",
       features: [
@@ -43,6 +46,7 @@ const ServicesSection = () => {
     {
       category: "Doctorate Mentorship",
       title: "PhD (Doctor of Philosophy)",
+      link:"/phd",
       icon: <BookOpen className="w-8 h-8 text-cyan-400" />,
       color: "bg-slate-800",
       features: [
@@ -120,10 +124,10 @@ const ServicesSection = () => {
               for Scholars & Professionals
             </h2>
           </div>
-          <button className="hidden md:flex items-center space-x-2 bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-cyan-400/30">
+          {/* <button className="hidden md:flex items-center space-x-2 bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-cyan-400/30">
             <span>View All Services</span>
             <ArrowRight className="w-5 h-5" />
-          </button>
+          </button> */}
         </div>
 
         {/* Services Grid */}
@@ -158,10 +162,11 @@ const ServicesSection = () => {
                       </li>
                     ))}
                   </ul>
-
+                  <a href={`/service/${service.link}`}>
                   <button className="w-full bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 group-hover:scale-105">
                     Enroll Now
                   </button>
+                  </a>
                 </div>
               </div>
             ))}
@@ -207,8 +212,8 @@ const ServicesSection = () => {
                   <span className="text-white font-bold text-sm">L</span>
                 </div>
                 <span className="text-2xl font-semibold">
-                  <span className="text-cyan-500">Learn</span>
-                  <span className="text-slate-800">Hub</span>
+                  <span className="text-cyan-500">Gradify</span>
+                  <span className="text-slate-800">Now</span>
                 </span>
               </div>
             </div>
@@ -243,8 +248,8 @@ const ServicesSection = () => {
                   <span className="text-white font-bold text-sm">L</span>
                 </div>
                 <span className="text-2xl font-semibold">
-                  <span className="text-cyan-500">Learn</span>
-                  <span className="text-slate-800">Hub</span>
+                  <span className="text-cyan-500">Gradify</span>
+                  <span className="text-slate-800">Now</span>
                 </span>
               </div>
             </div>
@@ -266,12 +271,11 @@ const ServicesSection = () => {
                 Join thousands of successful scholars who have achieved their academic goals with our expert guidance and comprehensive support system.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-cyan-400 hover:bg-cyan-300 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-cyan-400/30">
-                  Get Started Today
-                </button>
+               <a href='/contact'>
                 <button className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-all duration-300">
                   Schedule a Consultation
                 </button>
+                </a>
               </div>
             </div>
           </div>

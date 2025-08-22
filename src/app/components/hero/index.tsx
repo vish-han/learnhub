@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
   const stats = [
-    { number: 20700, suffix: "+", label: "Doctorates Mentored" },
+    { number: 2319, suffix: "+", label: "Doctorates Mentored" },
     { number: 6863, suffix: "+", label: "Researchers Guided" },
     { number: 10016, suffix: "+", label: "Higher Education Learners" },
     { number: 30045, suffix: "+", label: "Learners Empowered" }
@@ -13,7 +13,7 @@ const HeroSection = () => {
   // Animation variants with proper TypeScript types
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 }}
   };
 
   const fadeInDown: Variants = {
@@ -191,7 +191,7 @@ const HeroSection = () => {
           >
             A Global Community of DOCTORATES & RESEARCHERS
           </motion.p>
-          
+          <a href='/about' className='cursor-pointer'>
           <motion.button 
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-300 shadow-lg border border-blue-400/20"
             initial="hidden"
@@ -212,6 +212,7 @@ const HeroSection = () => {
           >
             Know more →
           </motion.button>
+          </a>
         </div>
       </div>
             
